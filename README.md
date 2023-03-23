@@ -49,6 +49,22 @@ Options:
   --filename FILENAME   filename to output result (default: )
 ````
 
+## Hyperparameter tuning
+
+To perform hyperparameter tuning, we make use of `wandb`:
+
+1. Run
+    ```bash
+    wandb sweep configs/<config-name>
+    ````
+    to obtain a sweep id `<sweep-id>`
+
+2. Run the hyperparameter tuning with
+    ```bash
+    wandb agent <sweep-id>
+    ```
+    You can run the above command multiple times on each machine you would like to contribute to the grid-search
+
 ## Credits
 
 Code for model training and evaluation is heavily based on the official [ESAN author implementation](https://github.com/beabevi/ESAN).
